@@ -13,4 +13,5 @@ class Constant {
 
 class EndPoints{
     static const postEndpoint = "/posts";
+    static const commentsEndPoint = "/comments?postId=";
 }

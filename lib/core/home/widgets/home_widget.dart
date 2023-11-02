@@ -6,6 +6,7 @@
 ///
 ///  * --------------------------------------------------------------------------- * ///
 
+import 'package:bloc_master_framework/core/comments/presentation/comments_page.dart';
 import 'package:bloc_master_framework/core/home/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,23 +24,11 @@ class HomeWidget extends StatelessWidget {
         if (state is FetchHomeLoaded) {
           //success
           return ListView.builder(
-            itemCount: state.data.data?.length,
+            itemCount: state.data.data?.length ?? 0,
             itemBuilder: (context, index) {
               var data = state.data.data?[index];
-              return Padding(
-                padding: const EdgeInsets.only(top: 8, left: 4, right: 4),
-                child: Card(child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(data?.title ?? '-'),
-                      const SizedBox(width: 8,),
-                      Text(data?.title ?? '-'),
-                    ],
-                  ),
-                )),
+              return CommentsPage(
+                data: data,
               );
             },
           );

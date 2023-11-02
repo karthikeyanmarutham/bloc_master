@@ -3,10 +3,10 @@
 import 'package:bloc_master_framework/constant/constant.dart';
 import 'package:dio/dio.dart';
 
-class NetworkClient {
+class NetworkManager {
   var _dio = Dio();
 
- Dio  get networkClient {
+ Dio  get client {
     BaseOptions? baseOptions = BaseOptions(baseUrl: Constant.baseUrl, headers: {});
 
     _dio.options.baseUrl = Constant.baseUrl;

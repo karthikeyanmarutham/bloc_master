@@ -14,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widgets/home_widget.dart';
 
 class HomePage extends StatelessWidget {
+  static const route = '/';
   const HomePage({
     Key? key,
   }) : super(key: key);

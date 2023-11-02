@@ -17,7 +17,7 @@ class HomeRepository {
      Completer<Map<String, dynamic>> completer =
         Completer<Map<String, dynamic>>();
       try{
-          final response = await NetworkClient().networkClient.get(EndPoints.postEndpoint);
+          final response = await NetworkManager().client.get(EndPoints.postEndpoint);
 
           if (response.statusCode != 200) {
             throw Exception('Failed Message');
